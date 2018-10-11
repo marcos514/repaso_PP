@@ -5,20 +5,29 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
-import { TipoUsuarioComponent } from './tipo-usuario/tipo-usuario.component';
+import { MenuComponent } from './menu/menu.component';
+
+import { DataService } from "./data.service";
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { GrillaComponent } from './grilla/grilla.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
-    TipoUsuarioComponent
+    MenuComponent,
+    GrillaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

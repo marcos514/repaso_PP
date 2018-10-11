@@ -22,4 +22,16 @@ export class DataService {
         tipo:tipo
       }});
   }
+
+  LogIn(usr,mail,pass)
+  {
+    return this.http.post("http://192.168.2.26:3000/login",
+    {
+      cliente:
+      {
+        name:usr,
+        pass:pass,
+        mail:mail
+      }});
+  }
 }

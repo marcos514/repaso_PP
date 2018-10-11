@@ -1,0 +1,18 @@
+<div *ngIf="lista.length>0">
+  <div class="container-fluid">
+      <div class="row" >
+          <div class="col-sm-4  col-md-4 col-xs-4 ">Nombre</div>
+          <div class="col-sm-4  col-md-4 col-xs-4">Apellido</div>
+          <div class="col-sm-4  col-md-4 col-xs-4 ">Sueldo</div>
+      </div>
+      <div *ngFor="let aux of lista;let par=even;let impar=odd;let first= first;let i= index">
+              <div class="row" [ngClass]="{trece:i==12,par:par,impar:impar}">
+                  <div class="col-sm-4  col-md-4 col-xs-4 ">{{aux.nombre}}</div>
+                  <div class="col-sm-4  col-md-4 col-xs-4">{{aux.apellido}}</div>
+                  <div class="col-sm-4  col-md-4 col-xs-4 ">{{aux.sueldo}}</div>
+              </div>
+          
+      </div>
+
+  </div>
+</div>
