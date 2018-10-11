@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import {DataService} from "../data.service";
 @Component({
   selector: 'app-signup',
@@ -10,14 +12,15 @@ export class SignupComponent implements OnInit {
   pass:string;
   tipo:string;
   usr:string;
-  constructor(private http:DataService) { }
+  constructor(private http:DataService,private router:Router) { }
 
   ngOnInit() {
   }
 
-  SignUp()
+  Signup()
   {
-    this.http.SignUp(this.usr ,this.mail,this.pass,this.tipo).subscribe(data=>{console.log(data)},err=>{console.log(err)})
+    this.http.SignUp(this.usr ,this.mail,this.pass,this.tipo).subscribe(data=>{this.router.navigate(["/login"]);},err=>{console.log(err)})
+    
   }
 
 }

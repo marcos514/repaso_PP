@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../data.service";
+import { Router } from '@angular/router';
+
+import {JwtHelperService} from "@auth0/angular-jwt";
+
 
 @Component({
   selector: 'app-login',
@@ -7,11 +11,13 @@ import {DataService} from "../data.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+helper=new JwtHelperService();
+
   mail:string;
   pass:string;
   usr:string;
 
-  constructor(private http:DataService) { }
+  constructor(private http:DataService,private router:Router) { }
 
   ngOnInit() {
 
@@ -19,7 +25,8 @@ export class LoginComponent implements OnInit {
 
   LogIn()
   {
-    this.http.LogIn(this.usr ,this.mail,this.pass).subscribe(data=>{localStorage.setItem("Token", data.toString())},err=>{console.log(err)})
+    this.http.LogIn(this.mail,this.pass).subscribe(data=>{localStorage.setItem("Token", data["token"]);console.log(data)},err=>{console.log(err)})
+
   }
 
 }

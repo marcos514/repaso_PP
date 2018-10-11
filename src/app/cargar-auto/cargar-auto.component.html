@@ -1,0 +1,17 @@
+<h2>Cargar Auto</h2>
+
+<h3>Patente</h3>
+<input type="text" [(ngModel)]="patente"><br><br>
+<h3>Marca</h3>
+<input type="text" [(ngModel)]="marca"><br><br>
+<h3>Color</h3>
+<input type="text" [(ngModel)]="color"><br><br>
+<h3>Kilometros</h3>
+<input type="number" min="0" [(ngModel)]="kms"><br><br>
+<h3>Tipo</h3>
+<input type="radio" [(ngModel)]="tipo" name="tipo" value="auto" checked>Auto<br> 
+<input type="radio" [(ngModel)]="tipo" name="tipo" value="moto">Moto<br> 
+<input type="radio" [(ngModel)]="tipo" name="tipo" value="camioneta">Camioneta<br> 
+
+
+<input type="button" value="Cargar" (click)="Cargar()">

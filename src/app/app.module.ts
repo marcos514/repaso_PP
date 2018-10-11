@@ -11,6 +11,12 @@ import { DataService } from "./data.service";
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GrillaComponent } from './grilla/grilla.component';
+import { MostrarUsuarioComponent } from './mostrar-usuario/mostrar-usuario.component';
+import { VerTurnosComponent } from './ver-turnos/ver-turnos.component';
+import { CargarAutoComponent } from './cargar-auto/cargar-auto.component';
+import { SacarTurnoComponent } from './sacar-turno/sacar-turno.component';
+import { AdminComponent } from './admin/admin.component';
+import { ClienteComponent } from './cliente/cliente.component';
 
 
 @NgModule({
@@ -19,7 +25,13 @@ import { GrillaComponent } from './grilla/grilla.component';
     SignupComponent,
     LoginComponent,
     MenuComponent,
-    GrillaComponent
+    GrillaComponent,
+    MostrarUsuarioComponent,
+    VerTurnosComponent,
+    CargarAutoComponent,
+    SacarTurnoComponent,
+    AdminComponent,
+    ClienteComponent
   ],
   imports: [
     BrowserModule,
